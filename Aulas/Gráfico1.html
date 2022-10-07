@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o ChartJs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div>
+<canvas id="MyChart"></canvas>
+    </div>
+</body>
+</html>
+<script>
+
+const labels = [ //vetor com os nomes de meses ( const é uma forma de declarar variaveis)
+'12:00', //o const é uma variavel constante q nunca será mudada
+'13:00',
+'14:00',
+'15:00',
+'16:00',
+'17:00',
+
+];
+
+    const data = { //ela é um JSON
+        labels: labels, //utilizando a varivel label para definir os nomes embaixo 
+        datasets: [{ //métricas
+        label: 'Temperatura', // nome do grafico lá em cima
+        backgroundColor: 'rgb(0, 128, 0)', //cor da borda
+        borderColor: 'rgb(0, 128, 0)', // cor da borda
+        data: [30, 29, 28, 25, 22, 23], // valores que a linha vai ser atribuida)
+    },{
+        label: 'Umidade', // nome do grafico lá em cima
+      backgroundColor: 'rgb(255, 0, 0)', //cor da borda
+      borderColor: 'rgb(255, 0, 0)', // cor da borda
+      data: [80, 82, 80, 85, 80, 83], // valores que a linha vai ser atribuida)
+    }
+
+
+]
+
+};
+
+  const config = { //configurações do seu chart
+    type: 'line', //tipagem do gráfico barra,linha etc
+    data: data,
+    options: {}
+  };
+
+</script>
+<script>
+    const MyChart = new Chart (
+        document.getElementById('MyChart'),config);
+    
+    </script>

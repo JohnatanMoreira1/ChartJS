@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o ChartJs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div>
+<canvas id="grafico1" style="position: relative; height:40vh; width:80vw"></canvas>
+    </div>
+</body>
+</html>
+<script>
+
+const labels = [ //vetor com os nomes de meses ( const é uma forma de declarar variaveis)
+"Janeiro", //o const é uma variavel constante q nunca será mudada
+"Fevereiro",
+"Março",
+"Abril",
+"Maio",
+"Junho",
+];
+
+const data = { //ela é um JSON
+    labels: labels, //utilizando a varivel label para definir os nomes embaixo 
+    datasets: [{ //métricas
+      label: 'My First dataset', // nome do grafico lá em cima
+      backgroundColor: 'rgb(255, 99, 132)', //cor da borda
+      borderColor: 'rgb(255, 99, 132)', // cor da borda
+      data: [0, 10, 5, 2, 20, 30, 45], // valores que a linha vai ser atribuida)
+    }]
+  };
+
+  const config = { //configurações do seu chart
+    type: 'line', //tipagem do gráfico barra,linha etc
+    data: data,
+    options: {}
+  };
+
+
+</script>
+<script>
+const MyChart = new Chart (document.getElementByID("MyChart"),config);
+
+</script>
